@@ -1,0 +1,84 @@
+PID     Arrival CPU     I/O Requests            Priority
+1       13      14      (4@1) (6@4) (2@6)       10
+2       12      12      (4@2) (2@5) (6@10)      7
+3       1       8       (5@1) (5@2) (5@4)       1
+4       6       7       None                    10
+5       10      8       None                    8
+6       12      12      (3@4) (6@11)            7
+=== First Come First Served ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P4 | P4 | P4 | P4 | P4 | P4 | P3 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P2 | P2 | P6 | P6 | P6 | P6 | P1 | P3 | P3 | P2 | P2 | P2 | P6 | P6 | P6 | P6 | P6 | P6 | P6 | P1 | P1 | P1 | P3 | P3 | P3 | P3 | P2 | P2 | P2 | P2 | P2 | P6 | P1 | P1 | idle | idle | P1 | P1 | P1 | P1 | P1 | P1 | P1 | P1 | P2 | P2 | idle | idle | idle | idle | idle | idle | idle |
+
+=== First Come First Served Evaluation ===
+Start Time       : 1
+End Time         : 68
+Avg Waiting Time : 18
+Avg Turnaround   : 26
+Avg Response     : 6
+CPU Utilization  : 91.04%
+Completed        : 6
+
+=== Shortest Job First ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P4 | P4 | P4 | P4 | P4 | P4 | P3 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P3 | P3 | P2 | P2 | P6 | P6 | P6 | P6 | P3 | P3 | P3 | P3 | P6 | P6 | P6 | P6 | P6 | P6 | P6 | P2 | P2 | P2 | P1 | idle | P2 | P2 | P2 | P2 | P2 | P6 | P1 | P1 | P1 | idle | idle | P2 | P2 | idle | idle | P1 | P1 | idle | idle | P1 | P1 | P1 | P1 | P1 | P1 | P1 | P1 | idle | idle |
+
+=== Shortest Job First Evaluation ===
+Start Time       : 1
+End Time         : 73
+Avg Waiting Time : 15
+Avg Turnaround   : 23
+Avg Response     : 10
+CPU Utilization  : 84.72%
+Completed        : 6
+
+=== Preemptive SJF ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P4 | P4 | P4 | P4 | P4 | P4 | P3 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P3 | P3 | P6 | P6 | P6 | P6 | P2 | P3 | P3 | P3 | P3 | P6 | P6 | P6 | P6 | P6 | P6 | P6 | P2 | P1 | idle | idle | idle | P2 | P6 | P2 | P2 | P1 | P1 | P2 | P2 | P2 | P2 | P2 | P1 | idle | idle | idle | idle | idle | P2 | P2 | P1 | P1 | idle | idle | P1 | P1 | P1 | P1 | P1 | P1 | P1 |
+
+=== Preemptive SJF Evaluation ===
+Start Time       : 1
+End Time         : 75
+Avg Waiting Time : 15
+Avg Turnaround   : 23
+Avg Response     : 10
+CPU Utilization  : 81.08%
+Completed        : 5
+
+=== Priority Scheduling (Non-preemptive) ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P4 | P4 | P4 | P4 | P4 | P4 | P3 | P2 | P2 | P6 | P6 | P6 | P6 | P3 | P3 | P2 | P2 | P2 | P6 | P6 | P6 | P6 | P6 | P6 | P6 | P3 | P3 | P3 | P3 | P2 | P2 | P2 | P2 | P2 | P6 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P5 | P2 | P2 | P1 | idle | idle | idle | idle | P1 | P1 | P1 | idle | idle | idle | idle | idle | idle | P1 | P1 | idle | idle | P1 | P1 | P1 | P1 | P1 |
+
+=== Priority Scheduling (Non-preemptive) Evaluation ===
+Start Time       : 1
+End Time         : 75
+Avg Waiting Time : 18
+Avg Turnaround   : 26
+Avg Response     : 12
+CPU Utilization  : 78.38%
+Completed        : 5
+
+=== Preemptive Priority Scheduling ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P3 | P4 | P4 | P5 | P5 | P2 | P3 | P3 | P2 | P6 | P6 | P6 | P6 | P3 | P3 | P3 | P3 | P6 | P6 | P6 | P6 | P6 | P6 | P6 | P2 | P2 | P2 | P5 | P5 | P2 | P2 | P2 | P2 | P2 | P6 | P5 | P5 | P5 | P5 | P4 | P2 | P2 | P4 | P4 | P4 | P1 | idle | idle | idle | idle | P1 | P1 | P1 | idle | idle | idle | idle | idle | idle | P1 | P1 | idle | idle | P1 | P1 | P1 | P1 | P1 |
+
+=== Preemptive Priority Scheduling Evaluation ===
+Start Time       : 1
+End Time         : 75
+Avg Waiting Time : 21
+Avg Turnaround   : 29
+Avg Response     : 7
+CPU Utilization  : 78.38%
+Completed        : 5
+
+=== Round Robin (Quantum = 2) ===
+Gantt Chart:
+| idle | P3 | idle | idle | idle | idle | P4 | P4 | P3 | P4 | P4 | P5 | P5 | P4 | P4 | P2 | P2 | P6 | P6 | P1 | P5 | P5 | P3 | P3 | P4 | P6 | P6 | P2 | P2 | P5 | P5 | P1 | P1 | P3 | P3 | P2 | P6 | P6 | P5 | P5 | P1 | P3 | P3 | P2 | P2 | P6 | P6 | P2 | P2 | P1 | P1 | P6 | P6 | P2 | P1 | P1 | P6 | P1 | P1 | P1 | P2 | P2 | P1 | P1 | P6 | P1 | idle | idle | idle | idle | idle | idle | idle | idle | idle |
+
+=== Round Robin (Quantum = 2) Evaluation ===
+Start Time       : 1
+End Time         : 66
+Avg Waiting Time : 23
+Avg Turnaround   : 31
+Avg Response     : 2
+CPU Utilization  : 93.85%
+Completed        : 6
